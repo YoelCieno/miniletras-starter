@@ -3,7 +3,7 @@ import Header from '@components/Header'
 import Footer from '@components/Footer'
 import Button from '@components/Button'
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="container">
       <Head>
@@ -13,12 +13,11 @@ export default function Home() {
       <main>
         <Header title="Cocina tu cuento favorito" />
         <section className="grid-container">
-          <article className="fraction"><Button /></article>
-          <article className="fraction">2</article>
-          <article className="fraction">3</article>
-          <article className="fraction">4</article>
-          <article className="fraction">5</article>
-          <article className="fraction">6</article>
+          {
+            ["1", "2", "3", "4", "5", "6"].map(
+              fr => <article key={fr} className="fraction"><Button fraction={fr} /></article>
+            )
+          }
         </section>
       </main>
 
@@ -26,3 +25,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
