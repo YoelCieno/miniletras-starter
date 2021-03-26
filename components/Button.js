@@ -5,7 +5,7 @@ const Button = props => {
   const [textOrImage, setTextOrImage] = useState({
     typeText: true,
     src: "Texto",
-    fraction: props.fraction
+    fraction: props.fraction?.fr
   });
 
   console.log('textOrImage:', textOrImage);
@@ -14,7 +14,7 @@ const Button = props => {
       () => setTextOrImage({
         typeText: textOrImage.typeText = !textOrImage.typeText,
         src: textOrImage.typeText ? "Texto" : "Imagen",
-        fraction: props.fraction
+        fraction: props.fraction?.fr
       })
     }>
       { textOrImage.src } { textOrImage.fraction }

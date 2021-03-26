@@ -14,9 +14,14 @@ const Home = () => {
         <Header title="Cocina tu cuento favorito" />
         <section className="grid-container">
           {
-            ["1", "2", "3", "4", "5", "6"].map(
-              fr => <article key={fr} className="fraction"><Button fraction={fr} /></article>
-            )
+            [1, 2, 3, 4, 5, 6].map(fr => {
+              const fractal = {
+                typeText: isOdd(fr),
+                src: `text ${fr}`,
+                fr: fr
+              };
+              return <article key={fractal.fr} className="fraction"><Button fraction={fractal} /></article>
+            })
           }
         </section>
       </main>
@@ -24,6 +29,10 @@ const Home = () => {
       <Footer />
     </div>
   )
+}
+
+function isOdd(n) {
+   return Math.abs(n % 2) === 1;
 }
 
 export default Home;
