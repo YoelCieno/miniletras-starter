@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
-import Button from '@components/Button'
+import Row from '@components/Row'
 
-const Home = () => {
+function Home() {
+
   return (
     <div className="container">
       <Head>
@@ -14,13 +15,12 @@ const Home = () => {
         <Header title="Cocina tu cuento favorito" />
         <section className="grid-container">
           {
-            [1, 2, 3, 4, 5, 6].map(fr => {
-              const fractal = {
-                typeText: isOdd(fr),
-                src: `text ${fr}`,
-                fr: fr
-              };
-              return <article key={fractal.fr} className="fraction"><Button fraction={fractal} /></article>
+            [1, 3, 5].map(num => {
+              return (
+                <div className="row" key={num}>
+                  <Row section={num} />
+                </div>
+              )
             })
           }
         </section>
@@ -29,10 +29,6 @@ const Home = () => {
       <Footer />
     </div>
   )
-}
-
-function isOdd(n) {
-   return Math.abs(n % 2) === 1;
 }
 
 export default Home;
