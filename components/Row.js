@@ -2,61 +2,49 @@ import React, { useState } from "react";
 
 
 function Row(props) {
-  console.log('propsButton: init', props);
+
+  const [fractal, setFraction] = useState([0, 1].map(fr => {
+    return {
+      page: 1,
+      isOdd: !fr,
+      fraction: props.section + fr,
+      src: !fr ? 'Texto' : 'Imagen'
+    }
+  }));
 
   function isOdd(n) {
     return Math.abs(n % 2) === 1;
   }
 
-  const [fractal, setFraction] = useState([
-    {
-      page: 1,
-      isOdd: true,
-      fraction:props.section,
-      src: 'Texto'
-    },
-    {
-      page: 1,
-      isOdd: false,
-      fraction: props.section + 1,
-      src: 'Imagen'
-    }
-  ]);
-
   function limit(num) {
-    return num > 1 ? num - 1 : 1;
+    return num > 1 ? --num : 1;
   }
 
   function setState(type) {
-    console.log('fractal:', fractal);
-    return setFraction([
-      {
-        page: isOdd(type) ? limit(fractal[0].page) : fractal[0].page + 1,
-        src: fractal[0].src,
-        fraction: fractal[0].fraction,
-        isOdd: fractal[0].isOdd
-      },
-      {
-        page: isOdd(type) ? limit(fractal[1].page) : fractal[1].page + 1,
-        src: fractal[1].src,
-        fraction: fractal[1].fraction,
-        isOdd: fractal[1].isOdd
+    return setFraction([0, 1].map(fr => {
+      return {
+        page: isOdd(type) ? limit(fractal[fr].page) : ++fractal[fr].page,
+        src: fractal[fr].src,
+        fraction: fractal[fr].fraction,
+        isOdd: fractal[fr].isOdd
       }
-    ]);
+    }));
   }
-
+  
   return (
     <>
-      <article className="fraction">
-        <button className="button" onClick={() => setState(1)}>
-          SRC: { fractal[0].src } Fraction: { fractal[0].fraction } Page: {fractal[0].page}
-        </button>
-      </article>
-      <article className="fraction">
-        <button className="button" onClick={() => setState(2)}>
-          SRC: { fractal[1].src } Fraction: { fractal[1].fraction } Page: {fractal[1].page}
-        </button>
-      </article>
+      {
+        [0, 1].map(fr => {
+          return (
+            <article className="fraction" key={fr}>
+              <button className="button" onClick={() => setState(++fr)}>
+                SRC: { fractal[fr].src } Fraction: { fractal[fr].fraction } Page: {fractal[fr].page}
+              </button>
+            </article>
+          )
+        })
+
+      }
     </>
   );
 }
