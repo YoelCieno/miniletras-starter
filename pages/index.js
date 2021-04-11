@@ -15,10 +15,10 @@ function Home() {
         <Header title="Cocina tu cuento favorito" />
         <section className="grid-container">
           {
-            [1, 3, 5].map(num => {
+            [1, 3].map(num => {
               return (
                 <div className="row" key={num}>
-                  <Row section={num} />
+                  <Row row={num} />
                 </div>
               )
             })
