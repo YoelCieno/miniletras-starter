@@ -49,3 +49,6 @@ code {
 .fraction:nth-child(odd) {
   border-right: 1px solid var(--gallery);
 }
+.img {
+  max-height: 600px;
+}
