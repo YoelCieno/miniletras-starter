@@ -1,0 +1,6 @@
+.fraction:nth-child(odd) {
+  border-right: 1px solid var(--gallery);
+}
+.btn {
+  background-color: transparent;
+}

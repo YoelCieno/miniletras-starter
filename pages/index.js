@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from '@components/Header'
-import Footer from '@components/Footer'
-import Row from '@components/Row'
+import Footer from '@components/footer/Footer'
+import Row from '@components/row/Row'
 
 function Home() {
 

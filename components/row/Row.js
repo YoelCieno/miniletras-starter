@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Fraction from "./Fraction";
-
+import Fraction from "../fraction/Fraction";
+import styles from './Row.module.css'
 
 function Row({ row }) {
 
@@ -41,15 +41,14 @@ function Row({ row }) {
       {
         [0, 1].map(fr => {
           return (
-            <article className="fraction" key={fr}>
-              <button className="button" onClick={() => setState(++fr)}>
+            <article className={styles.fraction} key={fr}>
+              <button className={styles.btn} onClick={() => setState(++fr)}>
                 <Fraction fr={ fractal[fr] } />
                 SRC: { fractal[fr].src } Fraction: { fractal[fr].fraction } Page: {fractal[fr].page}
               </button>
             </article>
           )
         })
-
       }
     </>
   );
