@@ -1,0 +1,23 @@
+.article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: left;
+}
+.article header {
+  text-align: right;
+  margin: 0 1rem 0 0;
+} 
+.article h1  {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(0, 109, 138);
+  margin: 0;
+}
+.article h2 {
+  font-size: 1.25rem;
+  margin: 0.25rem 0 0 0;
+}
+.article p  {
+  margin-top: 0;
+
+}
