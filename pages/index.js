@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from '@components/Header'
-import Footer from '@components/footer/Footer'
 import Row from '@components/row/Row'
 
 function Home() {
@@ -12,12 +11,12 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header title="Cocina tu cuento favorito" />
+        <Header title="Sentimientos encontrados" />
         <section className="grid-container">
           {
             [1, 3].map(num => {
               return (
-                <div className="row" key={num}>
+                <div className={num === 1 ? 'row img': 'row text'} key={num}>
                   <Row row={num} />
                 </div>
               )
@@ -25,8 +24,6 @@ function Home() {
           }
         </section>
       </main>
-
-      <Footer />
     </div>
   )
 }

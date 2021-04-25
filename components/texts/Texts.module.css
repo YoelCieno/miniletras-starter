@@ -1,14 +1,16 @@
 .article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   text-align: left;
+  margin-left: 2rem;
 }
 .article header {
   text-align: right;
-  margin: 0 1rem 0 0;
+  margin: 0 2rem 0 0;
 } 
 .article h1  {
-  font-size: 2rem;
+  font-size: 2.75rem;
   font-weight: bold;
   color: rgb(0, 109, 138);
   margin: 0;
@@ -19,5 +21,8 @@
 }
 .article p  {
   margin-top: 0;
-
+  line-height: 1.2rem;
+}
+.paragraph + .paragraph {
+  margin-left: 1rem;
 }

@@ -1,7 +1,7 @@
 :root {
   --gallery: #eaeaea;
 }
-
+  
 @font-face {
   font-family: 'lora';
   src: url('/fonts/lora-v17-latin-regular.eot'); /* IE9 Compat Modes */
@@ -38,7 +38,9 @@ code {
   padding: 0.75rem;
   font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
 }
-
+.title {
+  font-size: 3rem;
+}
 .container {
   height: 100vh;
   display: flex;
@@ -48,11 +50,19 @@ code {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 0 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid var(--gallery);
+  max-width: 2140px;
+  max-height: 100vh;
+  border-top: 1px solid var(--gallery);
 }
 .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  border-right: 1px solid var(--gallery);
+  border-left: 1px solid var(--gallery);
+}
+.row.img {
+  min-height: auto;
+}
+.row.text {
+  border-bottom: 1px solid var(--gallery);
 }
