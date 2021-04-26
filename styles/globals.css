@@ -3,21 +3,30 @@
 }
   
 @font-face {
-  font-family: 'lora';
-  src: url('/fonts/lora-v17-latin-regular.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/lora-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/lora-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/lora-v17-latin-regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/lora-v17-latin-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/lora-v17-latin-regular.svg#lora') format('svg'); /* Legacy iOS */
+  font-family: 'bembo';
+  src: url('/fonts/BemboStd.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/BemboStd.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/BemboStd.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/BemboStd.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/BemboStd.svg#bembo') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bembo-bold';
+  src: url('/fonts/BemboStd-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/BemboStd-Bold.woff2') format('woff2'),
+       url('/fonts/BemboStd-Bold.woff') format('woff'),
+       url('/fonts/BemboStd-Bold.ttf') format('truetype'),
+       url('/fonts/BemboStd-Bold.svg#bembo-bold') format('svg');
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'lora', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-  Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'bembo', -apple-system, BlinkMacSystemFont, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
@@ -40,6 +49,7 @@ code {
 }
 .title {
   font-size: 3rem;
+  font-family: 'bembo-bold', -apple-system, BlinkMacSystemFont, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 .container {
   height: 100vh;
