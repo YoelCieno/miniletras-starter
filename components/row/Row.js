@@ -13,6 +13,10 @@ function Row({ row }) {
     };
   }));
 
+  const [radioState, setRadioState] = useState({
+    selected: 'page-1'
+  });
+
   function isOdd(n) {
     return Math.abs(n % 2) === 1;
   }
@@ -42,12 +46,15 @@ function Row({ row }) {
         [0, 1].map(fr => {
           return (
             <section className={styles.fraction} key={fr}>
-              <button className={
-                  `${styles.btn__no_appearance} ${fractal[fr]?.src ? styles.text :  styles.img }`
-                } 
-                onClick={() => setState(++fr)}>
-                <Fraction fr={ fractal[fr] } />
-              </button>
+              <input type='radio' name={`row-${row}`} id={`page-${fr + 1}-row-${row}`} />
+              <label>
+                <button className={
+                    `${styles.btn__no_appearance} ${fractal[fr]?.src ? styles.text :  styles.img }`
+                  } 
+                  onClick={() => setState(++fr)}>
+                  <Fraction fr={ fractal[fr] } />
+                </button>
+              </label>
             </section>
           )
         })
