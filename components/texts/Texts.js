@@ -2,7 +2,7 @@ import styles from './Texts.module.css';
 
 export default function Texts({ fr }) {
   switch(fr?.fraction) {
-    case 3: switch (fr?.page) {
+    case 3: switch (fr?.sheet) {
       case 1: return (<>
         <article className={styles.article}>
           <header className={styles.header}>
@@ -53,7 +53,7 @@ export default function Texts({ fr }) {
       </>);
       default: return <></>;
     }
-    case 4: switch (fr?.page) {
+    case 4: switch (fr?.sheet) {
       case 1: return (<>
         <article className={styles.article}>
           <p className={styles.paragraph}>
@@ -73,7 +73,7 @@ export default function Texts({ fr }) {
             ¿Qué hace falta para que empaticemos o sintamos compasión? De algún modo, tenemos que sentirnos similares a aquella per- sona que, en principio, es tan distinta a nosotros.Y para con- seguirlo hace falta una narración. Las lágrimas, el reproche, las novelas, la publicidad, la política... todos buscan la empatía. Para que nos pongamos en los zapatos del otro es indispensable que nos cuenten (o nos contemos) un relato emocionante, que nos afecte aquello que le sucede al otro, que su historia nos lleve a tomar partido y se acorte la distancia que nos separa, que poco a poco reconozcamos en el otro aspectos de nosotros mismos, que sintamos, por fin, que lo que el otro siente es lo que nosotros sentimos. Ahora participamos de su sentimiento: vemos las cosas del mismo color.
           </p>
         </article>
-      </>)
+      </>);
       case 3: return (<>
         <article className={styles.article}>
           <p className={styles.paragraph}>
@@ -83,7 +83,7 @@ export default function Texts({ fr }) {
             Sentimos miedo ante una amenaza próxima, temor cuando pen- samos que nos va a ocurrir algo malo y pánico al vernos arras- trados por un peligro inesperado. Reaccionamos de distintas for- mas: luchamos, nos sentimos paralizados, evitamos el contacto o salimos corriendo. Pero también es posible controlar la situación: así como bomberos y soldados aprenden a dominar sus miedos, nosotros también podemos manejar nuestro miedo al abandono, a hacer el ridículo o a la muerte... No se trata de eliminar lo que sentimos, sino de aceptarlo. No se trata de no tener miedo, sino de enfrentarlo y comprenderlo. No se trata de mantener siempre el control, sino de controlar nuestra necesidad de control: de reco- nocer que somos vulnerables y admitir que muchas cosas se esca- pan de nuestras manos. Perdámosle, pues, el miedo a tener miedo.
           </p>
         </article>
-      </>)
+      </>);
       default: return <></>;
     }
     default: return <></>;

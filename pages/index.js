@@ -14,6 +14,7 @@ function Home() {
         <Header title="Sentimientos encontrados" />
         <section className="grid-container">
           {
+            // [1, 3] are rows [one ,two] in odd format
             [1, 3].map(num => {
               return (
                 <div className={num === 1 ? 'row img': 'row text'} key={num}>

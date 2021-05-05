@@ -5,7 +5,7 @@
   padding-right: 1px; /* Adjust webkit vertical align to middle border */
 }
 
-.btn__no_appearance {
+label.btn__no_appearance {
   background-color: transparent;
   font-family: 'bembo', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
   Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -13,6 +13,9 @@
   background-color: white;
   border: none;
 }
-.btn__no_appearance.text {
+label.btn__no_appearance.text {
   margin-top: 2rem;
+}
+label.btn__no_appearance.img {
+  margin: 0;
 }

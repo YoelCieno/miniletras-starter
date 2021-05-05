@@ -4,18 +4,15 @@ import styles from './Row.module.css';
 
 function Row({ row }) {
 
+  // [0, 1] are each row fraction => row + fr
   const [fractal, setFraction] = useState([0, 1].map(fr => {
     return {
-      page: 1,
+      sheet: 1,
       isOdd: !fr,
-      fraction: row + fr,
+      fraction: row + fr, 
       src: row === 1 ? 'img' : 'text'
     };
   }));
-
-  const [radioState, setRadioState] = useState({
-    selected: 'page-1'
-  });
 
   function isOdd(n) {
     return Math.abs(n % 2) === 1;
@@ -29,31 +26,34 @@ function Row({ row }) {
     }
   }
 
-  function setState(type) {
+  function setFracState(oddOrEven) {
     return setFraction([0, 1].map(fr => {
       return {
-        page: limit(isOdd(type) ? 'min' : 'max', fractal[fr].page),
+        sheet: limit(isOdd(oddOrEven) ? 'min' : 'max', fractal[fr].sheet),
         src: fractal[fr].src,
         fraction: fractal[fr].fraction,
         isOdd: fractal[fr].isOdd
       }
     }));
   }
-  
+
+  function onClickClass(fr) {
+    return `${styles.btn__no_appearance} ${styles[fractal[fr]?.src]}`;
+  }
+
+  function setRadOnChange(rad) {
+    console.log('%c 📢[ radio ]', 'font-size:17px; background:blueviolet; color:#fff;', rad);
+    
+  }
   return (
     <>
       {
         [0, 1].map(fr => {
           return (
             <section className={styles.fraction} key={fr}>
-              <input type='radio' name={`row-${row}`} id={`page-${fr + 1}-row-${row}`} />
-              <label>
-                <button className={
-                    `${styles.btn__no_appearance} ${fractal[fr]?.src ? styles.text :  styles.img }`
-                  } 
-                  onClick={() => setState(++fr)}>
-                  <Fraction fr={ fractal[fr] } />
-                </button>
+              <label className={onClickClass(fr)}>
+                <input type='radio' name={`row-${row}`} onClick={()=> setFracState(++fr)} onChange={(rad) => setRadOnChange(rad)} />
+                <Fraction fr={fractal[fr]} />
               </label>
             </section>
           )
