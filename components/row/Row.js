@@ -38,12 +38,11 @@ function Row({ row }) {
   }
 
   function onClickClass(fr) {
-    return `${styles.btn__no_appearance} ${styles[fractal[fr]?.src]}`;
+    return `${styles.page} ${styles[fractal[fr]?.src]}`;
   }
 
   function setRadOnChange(rad) {
-    console.log('%c 📢[ radio ]', 'font-size:17px; background:blueviolet; color:#fff;', rad);
-    
+    console.log('%c [radio]📢 ', 'color:white;background:blueviolet;font-size:18px;', rad);
   }
   return (
     <>

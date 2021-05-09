@@ -1,5 +1,6 @@
 :root {
   --gallery: #eaeaea;
+ --page-bg: #e3e3e3;
 }
   
 @font-face {
@@ -66,6 +67,7 @@ code {
 }
 .row {
   display: grid;
+  perspective: 1200px;
   grid-template-columns: repeat(2, 1fr);
   border-right: 1px solid var(--gallery);
   border-left: 1px solid var(--gallery);

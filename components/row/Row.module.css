@@ -1,21 +1,25 @@
+.fraction {
+  transform: rotateY(0deg);
+  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: 0% 0%;
+  background-image: linear-gradient(90deg, var(--page-bg) 0%, rgba(247, 247, 247, 0) 18%);
+}
 .fraction:nth-child(odd) {
   border-right: 1px solid var(--gallery);
 }
 .fraction:last-child {
   padding-right: 1px; /* Adjust webkit vertical align to middle border */
 }
-
-label.btn__no_appearance {
-  background-color: transparent;
-  font-family: 'bembo', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-  Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  appearance: none;
-  background-color: white;
-  border: none;
+.page {
+  transform: rotateY(0deg) translateZ(1px);
 }
-label.btn__no_appearance.text {
+.page.text {
   margin-top: 2rem;
 }
-label.btn__no_appearance.img {
+.page.img {
   margin: 0;
+}
+.page input[type=radio]:checked + article {
+  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform: rotateY(-180deg);
 }
