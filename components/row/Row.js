@@ -8,9 +8,9 @@ function Row({ row }) {
   const [fractal, setFraction] = useState([0, 1].map(fr => {
     return {
       sheet: 1,
-      isOdd: !fr,
       fraction: row + fr, 
-      src: row === 1 ? 'img' : 'text'
+      src: row === 1 ? 'img' : 'text',
+      pageType: !fr ? 'odd' : 'even'
     };
   }));
 
@@ -32,26 +32,27 @@ function Row({ row }) {
         sheet: limit(isOdd(oddOrEven) ? 'min' : 'max', fractal[fr].sheet),
         src: fractal[fr].src,
         fraction: fractal[fr].fraction,
-        isOdd: fractal[fr].isOdd
+        pageType: fractal[fr].pageType
       }
     }));
   }
 
-  function onClickClass(fr) {
-    return `${styles.page} ${styles[fractal[fr]?.src]}`;
+  function sectionClass(fr) {
+    return `${styles.page} ${styles[fractal[fr]?.pageType]}`;
   }
 
-  function setRadOnChange(rad) {
-    console.log('%c [radio]📢 ', 'color:white;background:blueviolet;font-size:18px;', rad);
+  function onLabelClass(fr) {
+    console.log('%c fractal[fr] 📢 ', 'color:white;background:blueviolet;font-size:18px;', fractal[fr]);
+    return `${styles[`sheet-${fractal[fr]?.sheet}`]}`;
   }
+
   return (
     <>
       {
         [0, 1].map(fr => {
           return (
-            <section className={styles.fraction} key={fr}>
-              <label className={onClickClass(fr)}>
-                <input type='radio' name={`row-${row}`} onClick={()=> setFracState(++fr)} onChange={(rad) => setRadOnChange(rad)} />
+            <section className={sectionClass(fr)} key={fr}>
+              <label className={onLabelClass(fr)} onClick={()=> setFracState(++fr)}>
                 <Fraction fr={fractal[fr]} />
               </label>
             </section>

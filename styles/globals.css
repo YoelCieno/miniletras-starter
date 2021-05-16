@@ -1,6 +1,8 @@
 :root {
   --gallery: #eaeaea;
- --page-bg: #e3e3e3;
+  --page-bg: #e3e3e3;
+  --bg-page-odd: linear-gradient(270deg, var(--page-bg) 0%, rgba(247, 247, 247, 0) 18%);
+  --bg-page-even: linear-gradient(90deg, var(--page-bg) 0%, rgba(247, 247, 247, 0) 18%);
 }
   
 @font-face {
@@ -67,10 +69,10 @@ code {
 }
 .row {
   display: grid;
-  perspective: 1200px;
   grid-template-columns: repeat(2, 1fr);
   border-right: 1px solid var(--gallery);
   border-left: 1px solid var(--gallery);
+  perspective: 1000px;
 }
 .row.img {
   min-height: auto;
