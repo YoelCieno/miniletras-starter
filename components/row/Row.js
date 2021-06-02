@@ -42,7 +42,6 @@ function Row({ row }) {
   }
 
   function onLabelClass(fr) {
-    console.log('%c fractal[fr] 📢 ', 'color:white;background:blueviolet;font-size:18px;', fractal[fr]);
     return `${styles[`sheet-${fractal[fr]?.sheet}`]}`;
   }
 

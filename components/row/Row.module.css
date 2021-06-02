@@ -13,29 +13,32 @@
 .text {
   padding-top: 2rem;
 }
-.odd {
+.odd .sheet-1 article, .odd .sheet-1 img {
   background-image: var(--bg-page-odd);
+  background-color: white;
 }
-.even {
-  background-image: var(--bg-page-even);
-}
-.odd .sheet-1 article {
-  background-image: var(--bg-page-odd);;
-}
-.even .sheet-1 article {
+.even .sheet-1 article, .even .sheet-1 img {
   animation: flip-even 1s ease-in;
+  background-image: var(--bg-page-even);
+  background-color: white;
 }
-.odd .sheet-2 article {
+.odd .sheet-2 article, .odd .sheet-2 img {
   animation: flip-odd 1s ease-in;
-} 
-.even .sheet-2 article {
-  background-image: var(--bg-page-even);
-} 
-.odd .sheet-3 article {
   background-image: var(--bg-page-odd);
+  background-color: white;
+} 
+.even .sheet-2 article, .even .sheet-2 img {
+  background-image: var(--bg-page-even);
+  background-color: white;
+} 
+.odd .sheet-3 article, .odd .sheet-3 img {
+  background-image: var(--bg-page-odd);
+  background-color: white;
 }
-.even .sheet-3 article {
+.even .sheet-3 article, .even .sheet-3 img {
   animation: flip-even 1s ease-in;
+  background-image: var(--bg-page-even);
+  background-color: white;
 } 
 
 @keyframes flip-even {

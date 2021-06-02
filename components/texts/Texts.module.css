@@ -3,11 +3,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   text-align: left;
-  margin-left: 2rem;
+  padding: 2rem;
+  height: 100%;
 }
 .article header {
   text-align: right;
-  margin: 0 2rem 0 0;
+  padding: 0 2rem 0 0;
 } 
 .article h1  {
   font-family: 'bembo-bold', -apple-system, BlinkMacSystemFont, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
