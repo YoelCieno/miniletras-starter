@@ -1,4 +1,5 @@
 .imgs {
-  max-width: 47vw;
+  max-width: 550px;
+  width: 100%;
   background-image: linear-gradient(90deg, #e3e3e3 0%, rgba(247, 247, 247, 0) 18%);
 }

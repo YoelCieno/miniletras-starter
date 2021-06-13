@@ -7,17 +7,15 @@ function Home() {
 
   const [row, setRow] = useState({ zIdxRowOne: 0, zIdxRowTwo: 0 });
 
-  const rowNum = (num) => {
-    return { one: num === 1, two: num === 3 }
-  };
+  const rowNum = (num) => ({ one: num === 1, two: num === 3 });
 
-  function onSetRow(num) {
-    return setRow({ zIdxRowOne: rowNum(num).one ? 1 : 0, zIdxRowTwo: rowNum(num).two ? 1 : 0 });
-  }
+  const onSetRow = (num) => (
+    setRow({ zIdxRowOne: rowNum(num).one ? 1 : 0, zIdxRowTwo: rowNum(num).two ? 1 : 0 })
+  );
 
-  function setStyleByRow(num) {
-    return { zIndex: rowNum(num).one ? row.zIdxRowOne : row.zIdxRowTwo };
-  }
+  const setStyleByRow = (num) => (
+    { zIndex: rowNum(num).one ? row.zIdxRowOne : row.zIdxRowTwo }
+  );
 
   return (
     <div className="container">

@@ -1,6 +1,7 @@
 :root {
   --gallery: #eaeaea;
-  --page-bg: #e3e3e3;
+  --page-bg: rgb(227 227 227 / 22%);
+  --titles: rgb(0, 109, 138);
   --bg-page-odd: linear-gradient(270deg, var(--page-bg) 0%, rgba(247, 247, 247, 0) 18%);
   --bg-page-even: linear-gradient(90deg, var(--page-bg) 0%, rgba(247, 247, 247, 0) 18%);
 }
@@ -44,26 +45,22 @@ main {
   width: 100%;
 }
 
-code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
-}
 .title {
-  font-size: 3rem;
+  font-size: 5rem;
+  margin-bottom: 1rem;
   font-family: 'bembo-bold', -apple-system, BlinkMacSystemFont, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--titles);
 }
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .grid-container {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   gap: 0 0;
-  max-width: 2140px;
+  max-width: 1200px;
   max-height: 100vh;
   border-top: 1px solid var(--gallery);
 }

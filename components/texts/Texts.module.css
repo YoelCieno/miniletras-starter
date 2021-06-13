@@ -13,7 +13,7 @@
 .article h1  {
   font-family: 'bembo-bold', -apple-system, BlinkMacSystemFont, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 2.75rem;
-  color: rgb(0, 109, 138);
+  color: var(--titles);
   margin: 0;
 }
 .article h2 {
